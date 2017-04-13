@@ -74,8 +74,6 @@
         <dd ng-show="serverGroup.revision">{{serverGroup.revision}}</dd>
         <dt>Kube UI</dt>
         <dd><a href={{ctrl.uiLink()}} target="_blank">{{serverGroup.name}}</a></dd>
-        <dt>TERM Period</dt>
-        <dd>{{serverGroup.deployDescription.terminationGracePeriodSeconds}}&nbsp;second(s)</dd>
       </dl>
     </collapsible-section>
     <collapsible-section heading="Health" expanded="true">
@@ -237,6 +235,12 @@
       <dl class="dl-horizontal dl-flex">
         <kubernetes-key-value-details map="serverGroup.deployDescription.nodeSelector">
         </kubernetes-key-value-details>
+      </dl>
+    </collapsible-section>
+    <collapsible-section heading="Advanced Settings">
+      <dl>
+        <dt>TERM Period</dt>
+        <dd>{{serverGroup.deployDescription.terminationGracePeriodSeconds}}&nbsp;second(s)</dd>
       </dl>
     </collapsible-section>
     <collapsible-section heading="Events">
